@@ -5,10 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.organizzeclone.R;
+import com.example.organizzeclone.config.ConfiguracaoFirebase;
+import com.google.firebase.auth.FirebaseAuth;
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
 
 public class MainActivity extends IntroActivity {
+
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +51,34 @@ public class MainActivity extends IntroActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        verificarUsuarioLogado();//Redirecionamento para PrincipalActivity.class, quando usu logado, quando inicia a activity
+        super.onStart();
+    }
+
     public void btEntrar(View view){
-        startActivity(new Intent(this, LoginActivity.class));
+        startActivity(new Intent(this,
+                LoginActivity.class)
+        );
     }
 
     public  void btCadasrtar(View view){
-        startActivity(new Intent(this, CadastroActivity.class));
+        startActivity(new Intent(this,
+                CadastroActivity.class)
+        );
+    }
+
+    public void verificarUsuarioLogado(){
+        auth = ConfiguracaoFirebase.getFireBaseAutentificacao();
+        if (auth.getCurrentUser() != null){
+            abrirTelaPrincipal();
+        }
+    }
+
+    public void abrirTelaPrincipal(){
+        startActivity(new Intent(this, PrincipalActivity.class));
+        finish();
     }
 
 }
