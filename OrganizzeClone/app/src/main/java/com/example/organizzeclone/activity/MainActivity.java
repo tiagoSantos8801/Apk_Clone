@@ -19,6 +19,9 @@ public class MainActivity extends IntroActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
 
+        if (auth.getCurrentUser() != null)
+            auth.signOut();
+
         setButtonBackVisible(false);
         setButtonNextVisible(false);
 
