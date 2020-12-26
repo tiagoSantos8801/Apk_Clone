@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "150027956149",
+    "project_id": "organizzeclone-5ac40",
+    "storage_bucket": "organizzeclone-5ac40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150027956149:android:3418bd0b48654deedbb3fc",
+        "android_client_info": {
+          "package_name": "com.example.organizzeclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "150027956149-rcha9kc8h8n2j9ge0ku506eb9e79a9nv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.organizzeclone",
+            "certificate_hash": "9dba946ae6920525e8e2dd27eef69637ac910338"
+          }
+        },
+        {
+          "client_id": "150027956149-2lvjjkabcic2ufv1j8k2hg15mq4d0glr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCQUt24xrChBlVeamJKkl-r9uKENwM3mc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "150027956149-2lvjjkabcic2ufv1j8k2hg15mq4d0glr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
