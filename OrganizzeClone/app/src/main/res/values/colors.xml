@@ -7,4 +7,17 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Cores Despesas-->
+    <color name="purple_200D">#FF706A</color>
+    <color name="purple_500D">#FF706A</color>
+    <color name="purple_700D">#E66560</color>
+    <color name="teal_200D">#FF706A</color>
+
+    <!-- Cores Respesas-->
+    <color name="purple_200R">#00D39E</color>
+    <color name="purple_500R">#00D39E</color>
+    <color name="purple_700R">#00BE8B</color>
+    <color name="teal_200R">#00D39E</color>
+
 </resources>
