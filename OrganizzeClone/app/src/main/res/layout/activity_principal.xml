@@ -30,25 +30,33 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="10dp"
         app:menu_fab_size="normal"
-        fab:menu_icon="@drawable/ic_add_24">
+        fab:menu_icon="@drawable/ic_add_24"
+        app:menu_colorNormal="@color/purple_500"
+        app:menu_colorPressed="@color/purple_700"
+        >
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/menu_despesa"
+            android:id="@+id/menu_Despesa"
+            android:onClick="adcionarDespesas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_add_24"
+            android:src="@drawable/ic_remove_24"
             app:fab_size="mini"
-            fab:fab_colorNormal="@color/"
-            fab:fab_label="Despesa"
+            app:fab_colorNormal="@color/purple_500D"
+            app:fab_colorPressed="@color/purple_700D"
+            app:fab_label="Despesas"
             fab:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_Receita"
+            android:onClick="adcionarReceitas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_add_24"
             app:fab_size="mini"
-            fab:fab_label="Receita"
+            app:fab_colorNormal="@color/purple_500R"
+            app:fab_colorPressed="@color/purple_700R"
+            app:fab_label="Receitas"
             fab:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>

@@ -1,5 +1,6 @@
 package com.example.organizzeclone.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -31,4 +32,13 @@ public class PrincipalActivity extends AppCompatActivity {
                }
           });*/
      }
+
+     public void adcionarDespesas(View view){
+          startActivity(new Intent(this, DespesasActivity.class));
+     }
+
+     public void adcionarReceitas(View view){
+          startActivity(new Intent(this, ReceitasActivity.class));
+     }
+
 }

@@ -1,10 +1,32 @@
 package com.example.organizzeclone.model;
 
+import com.example.organizzeclone.config.ConfiguracaoFirebase;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
+
 public class Usuario {
 
-     private String nome, senha, email;
+     private String nome, senha, email, idUsuario;
+     private Double despesaTotal = 0.00, receitaTotal = 0.00;
 
      public Usuario() {
+
+     }
+
+     public void salvarIdUsuarioDB(){
+          DatabaseReference firebase = ConfiguracaoFirebase.getFirebaseDatabase();
+          firebase.child("Usuários")//Criando nos no banco em tempo real
+                  .child(this.idUsuario)
+                  .setValue(this);
+     }
+
+     @Exclude//Informa que quando for pegar o obj para salva, exclua esse atributo do salvamento
+     public String getIdUsuario() {
+          return idUsuario;
+     }
+
+     public void setIdUsuario(String idUsuario) {
+          this.idUsuario = idUsuario;
      }
 
      public String getNome() {
@@ -15,6 +37,7 @@ public class Usuario {
           this.nome = nome;
      }
 
+     @Exclude//Fora da apreciacao de salvamento
      public String getSenha() {
           return senha;
      }

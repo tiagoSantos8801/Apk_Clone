@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.organizzeclone.R;
 import com.example.organizzeclone.config.ConfiguracaoFirebase;
+import com.example.organizzeclone.helper.Base64Custon;
 import com.example.organizzeclone.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -84,11 +85,18 @@ public class CadastroActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {//A variavel task traz o resultado da validacao (isSuccessful())
 
-                if (task.isSuccessful()){
+                if (task.isSuccessful()){//Sucesso
+
+                    //Criptografando email
+                    String emailCodBase64 = Base64Custon.codificarBase64(usuario.getEmail());
+                    usuario.setIdUsuario(emailCodBase64);
+                    usuario.salvarIdUsuarioDB();
+
                     finish();//Volta para os slides, que já direciona para a PrincipalActivity.class
                     Toast.makeText(CadastroActivity.this,
                             "Sucesso ao cadastrar usuario!", Toast.LENGTH_SHORT).show();
-                }else {
+
+                }else {//Erro
 
                     String excecao = "";
                     try {//Tratando possiveis excecoes de acordo com a documentacao
