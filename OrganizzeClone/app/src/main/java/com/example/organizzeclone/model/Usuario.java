@@ -6,8 +6,11 @@ import com.google.firebase.database.Exclude;
 
 public class Usuario {
 
-     private String nome, senha, email, idUsuario;
-     private Double despesaTotal = 0.00, receitaTotal = 0.00;
+     //Caracteristicas do obj usuario - model
+     private String nome, senha,
+                    email, idUsuario;
+     private Double despesaTotal = 0.00,
+                    receitaTotal = 0.00;
 
      public Usuario() {
 
@@ -18,6 +21,22 @@ public class Usuario {
           firebase.child("Usuários")//Criando nos no banco em tempo real
                   .child(this.idUsuario)
                   .setValue(this);
+     }
+
+     public Double getDespesaTotal() {
+          return despesaTotal;
+     }
+
+     public void setDespesaTotal(Double despesaTotal) {
+          this.despesaTotal = despesaTotal;
+     }
+
+     public Double getReceitaTotal() {
+          return receitaTotal;
+     }
+
+     public void setReceitaTotal(Double receitaTotal) {
+          this.receitaTotal = receitaTotal;
      }
 
      @Exclude//Informa que quando for pegar o obj para salva, exclua esse atributo do salvamento

@@ -8,6 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <!--Cor calendario-->
+    <color name="calendario">#FF6AE7F6</color>
+
     <!-- Cores Despesas-->
     <color name="purple_200D">#FF706A</color>
     <color name="purple_500D">#FF706A</color>

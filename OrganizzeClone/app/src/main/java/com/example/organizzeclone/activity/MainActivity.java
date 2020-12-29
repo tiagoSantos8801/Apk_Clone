@@ -82,5 +82,4 @@ public class MainActivity extends IntroActivity {
         startActivity(new Intent(this, PrincipalActivity.class));
         finish();
     }
-
 }
