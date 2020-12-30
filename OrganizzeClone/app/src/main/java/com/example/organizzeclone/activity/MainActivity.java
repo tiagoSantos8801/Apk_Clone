@@ -20,13 +20,13 @@ public class MainActivity extends IntroActivity {
         //setContentView(R.layout.activity_main);
 
 
-        setButtonBackVisible(false);
+        setButtonBackVisible(false);//Esconde botoes de ir e voltar
         setButtonNextVisible(false);
 
         addSlide(new FragmentSlide.Builder()//Criando Slidde
                 .background(android.R.color.white)//Cor de fundo
                 .fragment(R.layout.intro_1)//Layout criado
-                .canGoBackward(false)
+                .canGoBackward(false)//Nao pode voltar
                 .build());
 
         addSlide(new FragmentSlide.Builder()
@@ -47,7 +47,7 @@ public class MainActivity extends IntroActivity {
         addSlide(new FragmentSlide.Builder()
                 .background(android.R.color.white)
                 .fragment(R.layout.intro_cadastro)
-                .canGoForward(false)//Pode ir em frente
+                .canGoForward(false)//Nao pode ir em frente
                 .build());
 
     }
