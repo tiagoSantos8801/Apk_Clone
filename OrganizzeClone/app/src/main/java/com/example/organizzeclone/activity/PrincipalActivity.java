@@ -131,13 +131,13 @@ public class PrincipalActivity extends AppCompatActivity {
 
           alertDialog.setTitle("Excluir movimentação da conta...");
           alertDialog.setMessage("Você deseja excluir esta movimentação de conta ?");
-          alertDialog.setCancelable(false);
+          alertDialog.setCancelable(false);//Somente sai se escolher uma opcao
 
-          alertDialog.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+          alertDialog.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {//Listnner para click
                @Override
                public void onClick(DialogInterface dialogInterface, int i) {
 
-                    int position = viewHolder.getAdapterPosition();
+                    int position = viewHolder.getAdapterPosition();//Index de cards(array) na view do adapter
                     movimentacao = movimentacoes.get(position);
 
                     String emailusuario = auth.getCurrentUser().getEmail();//Pega o email do usuario atual
@@ -157,12 +157,12 @@ public class PrincipalActivity extends AppCompatActivity {
                @Override
                public void onClick(DialogInterface dialogInterface, int i) {
                     Toast.makeText(PrincipalActivity.this, "Cancelado ", Toast.LENGTH_SHORT).show();
-                    adapterMovimentacao.notifyDataSetChanged();//Informa ao adapter que os dados mudaram - como se chamasse o onbind
+                    adapterMovimentacao.notifyDataSetChanged();//Chamasse o onbind novamente
                }
           });
 
-          AlertDialog alertDia = alertDialog.create();
-          alertDia.show();
+          alertDialog.create();
+          alertDialog.show();
      }
 
      public void atualizarSaldo(){
